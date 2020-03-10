@@ -4,6 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- afvicon -->
+	<link rel="icon" type='image/x-icon' href='favicon.ico' />
 	<!-- title -->
 	<title>Gaming Community</title>
 	<!-- bootstrap -->
@@ -38,21 +40,49 @@
 			--secondary-text: #C8C8C8;
 			/* shadow */
 			--shd: 3px 5px 8px rgba(0, 0, 0, .55);
-			--shd-inset: inset 4px 6px 8px rgba(0, 0, 0, .75);
-			--shd-lg: 9px 11px 18px rgba(0, 0, 0, .75);
-			--shd-sm: 1px 3px 6px rgba(0, 0, 0, .55);
-			--shd-highlight: 3px 5px 8px rgba(0, 0, 0, .55), inset 4px 6px 8px rgba(0, 0, 0, .75);
+			--shd-inset: inset 3px 5px 8px rgba(0, 0, 0, .85);
+			--shd-lg: 9px 11px 18px rgba(0, 0, 0, .45);
+			--shd-sm: 1px 3px 5px rgba(0, 0, 0, .8);
+			--shd-highlight: 3px 5px 8px rgba(0, 0, 0, .45), inset 4px 6px 8px rgba(0, 0, 0, .9);
 			/* text size */
 			--text-size-sm: 12px;
 			--text-size-lg: 17px;
 			/* highlight */
-			--highlight: rgb(102, 243, 212);
+			--highlight: #66f3d4;
 			--border-highlight: 4px solid var(--highlight);
 		}
 	</style>
 
 	<!-- global style -->
 	<style>
+		/* @font-face {
+			font-family: calibrii;
+			src: url('font/CalibriRegular.ttf') format('truetype');
+			font-style: normal;
+			font-weight: normal;
+		}
+
+		@font-face {
+			font-family: calibrii;
+			src: url('font/CalibriBold.ttf') format('truetype');
+			font-style: normal;
+			font-weight: bold;
+		}
+
+		@font-face {
+			font-family: calibrii;
+			src: url('font/CalibriItalic.ttf') format('truetype');
+			font-style: italic;
+			font-weight: normal;
+		}
+
+		@font-face {
+			font-family: calibrii;
+			src: url('font/CalibriBoldItalic.ttf') format('truetype');
+			font-style: italic;
+			font-weight: bold;
+		} */
+
 		html {
 			margin: 0;
 			padding: 0;
@@ -61,6 +91,23 @@
 		html * {
 			font-size: 15px;
 			color: var(--primary-text);
+		}
+
+		body {
+			font-family:
+				"Segoe UI",
+				"SegoeuiPc",
+				"San Francisco",
+				"Helvetica Neue",
+				"Helvetica",
+				"Lucida Grande",
+				"Roboto",
+				"Ubuntu",
+				"Tahoma",
+				Microsoft Sans Serif,
+				Tahoma,
+				Arial,
+				sans-serif;
 		}
 
 		::-webkit-scrollbar {
@@ -116,11 +163,6 @@
 		.wrap {
 			white-space: pre-line;
 			word-break: break-word;
-		}
-
-		.logo {
-			width: 40px;
-			height: 40px;
 		}
 
 		/* component */
@@ -290,10 +332,11 @@
 		}
 
 
+
 		article,
 		footer {
 			width: 100vw;
-			max-width: 1050px;
+			max-width: 1000px;
 			margin: 0 auto;
 		}
 
@@ -340,7 +383,7 @@
 			left: calc(100vw - 300px);
 		}
 
-		@media only screen and (max-width: 1650px) {
+		@media only screen and (max-width: 1600px) {
 
 			article,
 			footer {
@@ -454,6 +497,7 @@
 			width: 100%;
 			height: 290px;
 			margin-bottom: 70px;
+			box-shadow: var(--shd-inset);
 		}
 
 		/* special rooms */
@@ -506,7 +550,7 @@
 
 		/* global chats */
 		.global-chats {
-			max-height: 800px;
+			max-height: 650px;
 			flex-grow: 1;
 			overflow: auto;
 		}
@@ -539,14 +583,10 @@
 			white-space: nowrap;
 			overflow: hidden;
 			font-size: var(--text-size-sm);
-			padding-bottom: 5px;
 		}
 
 		.global-chats-item-body .content {
-			background-color: var(--bg8);
-			padding: 5px 10px;
 			border-radius: 10px;
-			font-size: var(--text-size-sm);
 		}
 
 		.messages-box {
@@ -567,20 +607,23 @@
 			flex-grow: 1;
 			border-radius: 10px;
 			background-color: var(--bg8);
-			border: none;
 			padding: 5px 10px;
+			border: none;
 			resize: none;
 		}
 
 		.messages-container {
+			padding: 10px;
+			border-radius: 10px;
+			background-color: var(--bg8);
 			overflow: auto;
 		}
 
 		/* news */
 		.news {
-			width: 300px;
-			min-width: 300px;
-			margin-right: 40px;
+			width: 320px;
+			min-width: 320px;
+			margin-right: 60px;
 		}
 
 		.news-item {
@@ -703,6 +746,9 @@
 			<div class="button feedback-btn">Gửi phản hồi của bạn</div>
 			<div class="button">
 				<i class="fas fa-comment"></i>
+			</div>
+			<div class="button">
+				<i class="fas fa-bell"></i>
 			</div>
 			<div class="avatar button img" style="background-image: url(img/avatar.jpg)"></div>
 		</div>
