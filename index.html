@@ -8,24 +8,21 @@
 	<link rel="icon" type='image/x-icon' href='favicon.ico' />
 	<!-- title -->
 	<title>Gaming Community</title>
-	<!-- bootstrap -->
-	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
 	<!-- fontawesome -->
 	<link href="fontawesome-free-5.12.1-web/css/all.css" rel="stylesheet">
+	<!-- jquery -->
+	<script src="js/jquery-3.4.1.min.js"></script>
 </head>
 
 <body>
-	<!-- bootstrap -->
-	<script src="js/jquery-3.4.1.min.js"></script>
-	<script src="js/bootstrap/bootstrap.popper.min.js"></script>
-	<script src="js/bootstrap/bootstrap.js"></script>
 	<!-- sweetalert -->
 	<script src="js/sweetalert2.js"></script>
 
-	<!-- root -->
+	<!-- root styles -->
 	<style>
 		:root {
 			/* background color */
+			--bg10: #06141A;
 			--bg9: #263238;
 			--bg8: #37474F;
 			--bg7: #455A64;
@@ -39,62 +36,334 @@
 			--primary-text: #e4e6eb;
 			--secondary-text: #B2B4B9;
 			/* shadow */
-			--shd: 3px 5px 8px rgba(0, 0, 0, .55);
-			--shd-inset: inset 3px 5px 8px rgba(0, 0, 0, .85);
-			--shd-lg: 9px 11px 18px rgba(0, 0, 0, .45);
-			--shd-sm: 1px 3px 5px rgba(0, 0, 0, .8);
-			--shd-highlight: 3px 5px 8px rgba(0, 0, 0, .45), inset 4px 6px 8px rgba(0, 0, 0, .9);
+			--shd: 3px 6px 8px rgba(0, 0, 0, .55);
+			--shd-inset: inset 3px 6px 4px rgba(0, 0, 0, .8);
+			--shd-lg: 8px 16px 18px rgba(0, 0, 0, .45);
+			--shd-sm: 1px 2px 5px rgba(0, 0, 0, .8);
+			--shd-highlight: 3px 6px 8px rgba(0, 0, 0, .45), inset 3px 6px 8px rgba(0, 0, 0, .9);
 			/* text size */
 			--text-size-sm: 12px;
-			--text-size-lg: 18px;
+			--text-size-lg: 17px;
 			/* highlight */
 			--highlight: #66f3d4;
 			--border-highlight: 4px solid var(--highlight);
+			/* border radius */
+			--rounded-sm: 5px;
+			--rounded: 10px;
+			--rounded-lg: 25px;
+			--rounded-circle: 999px;
 		}
 	</style>
 
-	<!-- global style -->
+	<!-- bootstrap styles -->
 	<style>
-		/* @font-face {
-			font-family: calibrii;
-			src: url('font/CalibriRegular.ttf') format('truetype');
-			font-style: normal;
-			font-weight: normal;
+		.m-0 {
+			margin: 0 !important;
 		}
 
-		@font-face {
-			font-family: calibrii;
-			src: url('font/CalibriBold.ttf') format('truetype');
-			font-style: normal;
-			font-weight: bold;
+		.mt-0,
+		.my-0 {
+			margin-top: 0 !important;
 		}
 
-		@font-face {
-			font-family: calibrii;
-			src: url('font/CalibriItalic.ttf') format('truetype');
-			font-style: italic;
-			font-weight: normal;
+		.mr-0,
+		.mx-0 {
+			margin-right: 0 !important;
 		}
 
-		@font-face {
-			font-family: calibrii;
-			src: url('font/CalibriBoldItalic.ttf') format('truetype');
-			font-style: italic;
-			font-weight: bold;
-		} */
+		.mb-0,
+		.my-0 {
+			margin-bottom: 0 !important;
+		}
 
-		html {
+		.ml-0,
+		.mx-0 {
+			margin-left: 0 !important;
+		}
+
+		.m-1 {
+			margin: 0.25rem !important;
+		}
+
+		.mt-1,
+		.my-1 {
+			margin-top: 0.25rem !important;
+		}
+
+		.mr-1,
+		.mx-1 {
+			margin-right: 0.25rem !important;
+		}
+
+		.mb-1,
+		.my-1 {
+			margin-bottom: 0.25rem !important;
+		}
+
+		.ml-1,
+		.mx-1 {
+			margin-left: 0.25rem !important;
+		}
+
+		.m-2 {
+			margin: 0.5rem !important;
+		}
+
+		.mt-2,
+		.my-2 {
+			margin-top: 0.5rem !important;
+		}
+
+		.mr-2,
+		.mx-2 {
+			margin-right: 0.5rem !important;
+		}
+
+		.mb-2,
+		.my-2 {
+			margin-bottom: 0.5rem !important;
+		}
+
+		.ml-2,
+		.mx-2 {
+			margin-left: 0.5rem !important;
+		}
+
+		.m-3 {
+			margin: 1rem !important;
+		}
+
+		.mt-3,
+		.my-3 {
+			margin-top: 1rem !important;
+		}
+
+		.mr-3,
+		.mx-3 {
+			margin-right: 1rem !important;
+		}
+
+		.mb-3,
+		.my-3 {
+			margin-bottom: 1rem !important;
+		}
+
+		.ml-3,
+		.mx-3 {
+			margin-left: 1rem !important;
+		}
+
+		.m-4 {
+			margin: 1.5rem !important;
+		}
+
+		.mt-4,
+		.my-4 {
+			margin-top: 1.5rem !important;
+		}
+
+		.mr-4,
+		.mx-4 {
+			margin-right: 1.5rem !important;
+		}
+
+		.mb-4,
+		.my-4 {
+			margin-bottom: 1.5rem !important;
+		}
+
+		.ml-4,
+		.mx-4 {
+			margin-left: 1.5rem !important;
+		}
+
+		.m-5 {
+			margin: 3rem !important;
+		}
+
+		.mt-5,
+		.my-5 {
+			margin-top: 3rem !important;
+		}
+
+		.mr-5,
+		.mx-5 {
+			margin-right: 3rem !important;
+		}
+
+		.mb-5,
+		.my-5 {
+			margin-bottom: 3rem !important;
+		}
+
+		.ml-5,
+		.mx-5 {
+			margin-left: 3rem !important;
+		}
+
+		.p-0 {
+			padding: 0 !important;
+		}
+
+		.pt-0,
+		.py-0 {
+			padding-top: 0 !important;
+		}
+
+		.pr-0,
+		.px-0 {
+			padding-right: 0 !important;
+		}
+
+		.pb-0,
+		.py-0 {
+			padding-bottom: 0 !important;
+		}
+
+		.pl-0,
+		.px-0 {
+			padding-left: 0 !important;
+		}
+
+		.p-1 {
+			padding: 0.25rem !important;
+		}
+
+		.pt-1,
+		.py-1 {
+			padding-top: 0.25rem !important;
+		}
+
+		.pr-1,
+		.px-1 {
+			padding-right: 0.25rem !important;
+		}
+
+		.pb-1,
+		.py-1 {
+			padding-bottom: 0.25rem !important;
+		}
+
+		.pl-1,
+		.px-1 {
+			padding-left: 0.25rem !important;
+		}
+
+		.p-2 {
+			padding: 0.5rem !important;
+		}
+
+		.pt-2,
+		.py-2 {
+			padding-top: 0.5rem !important;
+		}
+
+		.pr-2,
+		.px-2 {
+			padding-right: 0.5rem !important;
+		}
+
+		.pb-2,
+		.py-2 {
+			padding-bottom: 0.5rem !important;
+		}
+
+		.pl-2,
+		.px-2 {
+			padding-left: 0.5rem !important;
+		}
+
+		.p-3 {
+			padding: 1rem !important;
+		}
+
+		.pt-3,
+		.py-3 {
+			padding-top: 1rem !important;
+		}
+
+		.pr-3,
+		.px-3 {
+			padding-right: 1rem !important;
+		}
+
+		.pb-3,
+		.py-3 {
+			padding-bottom: 1rem !important;
+		}
+
+		.pl-3,
+		.px-3 {
+			padding-left: 1rem !important;
+		}
+
+		.p-4 {
+			padding: 1.5rem !important;
+		}
+
+		.pt-4,
+		.py-4 {
+			padding-top: 1.5rem !important;
+		}
+
+		.pr-4,
+		.px-4 {
+			padding-right: 1.5rem !important;
+		}
+
+		.pb-4,
+		.py-4 {
+			padding-bottom: 1.5rem !important;
+		}
+
+		.pl-4,
+		.px-4 {
+			padding-left: 1.5rem !important;
+		}
+
+		.p-5 {
+			padding: 3rem !important;
+		}
+
+		.pt-5,
+		.py-5 {
+			padding-top: 3rem !important;
+		}
+
+		.pr-5,
+		.px-5 {
+			padding-right: 3rem !important;
+		}
+
+		.pb-5,
+		.py-5 {
+			padding-bottom: 3rem !important;
+		}
+
+		.pl-5,
+		.px-5 {
+			padding-left: 3rem !important;
+		}
+	</style>
+
+	<!-- gc styles -->
+	<style>
+		html * {
 			margin: 0;
 			padding: 0;
 		}
 
-		html * {
+		body {
+			font-family: Roboto, Arial, sans-serif;
+			box-sizing: border-box;
 			font-size: 15px;
 			color: var(--primary-text);
 		}
 
-		body {
-			font-family: Roboto, Arial, sans-serif;
+		body * {
+			box-sizing: inherit;
+			font-size: inherit;
+			color: inherit;
 		}
 
 		::-webkit-scrollbar {
@@ -107,11 +376,6 @@
 		::-webkit-scrollbar-thumb {
 			background-color: var(--bg6);
 			border-radius: 7px;
-		}
-
-		pre {
-			white-space: pre-line;
-			word-break: break-word;
 		}
 
 		textarea::placeholder,
@@ -133,7 +397,10 @@
 			width: 100%;
 		}
 
-
+		select {
+			background-color: transparent;
+			border: none;
+		}
 
 
 		.img {
@@ -152,445 +419,470 @@
 			word-break: break-word;
 		}
 
-		/* component */
-		.component {
-			display: flex;
-			flex-direction: column;
-		}
-
-		.component-head {
-			display: flex;
-			align-items: center;
-			margin-bottom: 22px;
-		}
-
-		.component-head * {
-			color: var(--secondary-text);
-		}
-
-		.component-head label {
-			margin-right: 10px;
-			font-weight: bold;
-			font-size: var(--text-size-lg);
-			flex-grow: 1;
-			overflow: hidden;
-			white-space: nowrap;
-		}
-
-		.component .component-body {
-			flex-grow: 1;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			overflow: auto;
-			padding-right: 30px;
-		}
-
-		/* padding hover */
-		.padding-hover {
-			transition: all .3s ease;
-		}
-
-		.padding-hover:hover {
-			padding: 10px;
-			background-color: var(--bg8);
-		}
-
-		/* fix bootstrap */
-		p,
-		pre,
-		label {
-			margin: 0;
-		}
-
-		.dropdown-menu {
-			font-weight: bold;
-			background-color: var(--bg6);
-			box-shadow: var(--shd-lg);
-		}
-
-		.dropdown-menu * {
-			font-weight: bold;
-			transition: all .3s ease;
-			color: var(--primary-text);
-		}
-
-		.dropdown-menu .dropdown-item:hover {
-			color: var(--bg6);
-			border-left: 4px solid var(--highlight);
-		}
-
-		.dropdown-toggle {
-			font-size: var(--text-size-lg);
-			font-weight: bold;
-		}
-
-		.tooltip-inner {
-			background-color: var(--primary-text);
-			color: var(--bg9);
-			font-weight: bold;
-			padding: 6px 14px;
-		}
-
-		/* button */
-		.button {
-			height: 40px;
-			min-height: 40px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			border-radius: 40px;
-			background-color: var(--bg6);
-			cursor: pointer;
-			font-weight: bold;
+		/* hover */
+		.hover {
 			transition: all .2s ease;
 		}
 
-		.button:hover {
-			background-color: var(--bg5);
+		.hover:hover {
+			padding: 8px 10px;
+			border-radius: var(--rounded);
+			border-left: 4px solid var(--highlight);
+			background-color: var(--bg8);
 		}
 
-		.button-light {
-			background-color: var(--bg8) !important;
+		/* btn */
+		.btn {
+			width: 40px;
+			min-width: 40px;
+			height: 40px;
+			min-height: 40px;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			background-color: var(--bg8);
+			cursor: pointer;
+			font-weight: bold;
+			border-radius: var(--rounded-sm);
+
+			margin-left: 5px;
+			margin-right: 5px;
+
+			transition: all .2s ease;
 		}
 
-		.button-light:hover {
+		.btn-content {
+			width: unset;
+			min-width: unset;
+
+			padding: 0 15px;
+		}
+
+		.btn-sm {
+			width: 30px;
+			min-width: 30px;
+			height: 30px;
+			min-height: 30px;
+		}
+
+		.btn-sm.btn-content {
+			width: unset;
+			min-width: unset;
+
+			padding: 0 10px;
+		}
+
+		.btn:hover {
+			background-color: var(--bg7);
+		}
+
+		.btn-light {
 			background-color: var(--bg7) !important;
 		}
 
-		/* underline */
-		.underline {
-			border-bottom: 1px solid var(--bg8);
+		.btn-light:hover {
+			background-color: var(--bg6) !important;
+		}
+
+		/* rows */
+		.row {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		/* border radius */
+		.rounded-sm {
+			border-radius: var(--rounded-sm);
+		}
+
+		.rounded {
+			border-radius: var(--rounded);
+		}
+
+		.rounded-lg {
+			border-radius: var(--rounded-lg);
+		}
+
+		.rounded-circle {
+			border-radius: var(--rounded-circle);
+		}
+
+		/* background */
+		.background {
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+
+			width: 100%;
+			height: 100%;
+		}
+
+		.background::after {
+			content: "";
+
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			width: 100%;
+			height: 100%;
+
+			background-color: rgba(0, 0, 0, .9);
+		}
+
+		/* head */
+		.head {
+			display: flex;
+			align-items: center;
+
+			color: var(--secondary-text);
+
+			margin-bottom: 20px;
+		}
+
+		.head label {
+			flex-grow: 1;
+			overflow: hidden;
+
+			margin-right: 10px;
+
+			font-weight: bold;
+			font-size: var(--text-size-lg);
+			white-space: nowrap;
+		}
+
+		/* svg background */
+		.bg-svg {
+			background-color: var(--bg9);
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='99' height='99' viewBox='0 0 120 120'%3E%3Cpolygon fill='%2337474f' fill-opacity='0.14' points='120 120 60 120 90 90 120 60 120 0 120 0 60 60 0 0 0 60 30 90 60 120 120 120 '/%3E%3C/svg%3E");
+		}
+
+		/* black layer */
+		.layer-black {
+			position: relative;
+			z-index: 1;
+		}
+
+		.layer-black * {
+			z-index: inherit;
+		}
+
+		.layer-black::after {
+			content: "";
+
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			width: 100%;
+			height: 100%;
+
+			background-color: rgba(0, 0, 0, .75);
 		}
 	</style>
 
-	<!-- framework -->
+	<!-- main styles -->
 	<style>
-		.icon {
-			border-radius: 999px;
-			padding: 9px;
-			cursor: pointer;
-			transition: all .2s ease;
-		}
-
-		.icon:hover {
-			background-color: var(--bg8);
-		}
-
 		body {
 			position: relative;
+
+			width: 100vw;
+			height: 100vh;
+
 			background-color: var(--bg9);
 			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='99' height='99' viewBox='0 0 120 120'%3E%3Cpolygon fill='%2337474f' fill-opacity='0.14' points='120 120 60 120 90 90 120 60 120 0 120 0 60 60 0 0 0 60 30 90 60 120 120 120 '/%3E%3C/svg%3E");
-			padding-top: 100px;
 		}
 
+		/* header */
 		header {
-			width: 100vw;
+			position: fixed;
+			z-index: 6;
+			top: 0;
+			left: 0;
+
+			width: 100%;
 			height: 60px;
+
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
 			padding-left: 10px;
 			padding-right: 10px;
-			position: fixed;
-			z-index: 9;
-			top: 0;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			background-color: var(--bg7);
-			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='99' height='99' viewBox='0 0 120 120'%3E%3Cpolygon fill='%2337474f' fill-opacity='0.14' points='120 120 60 120 90 90 120 60 120 0 120 0 60 60 0 0 0 60 30 90 60 120 120 120 '/%3E%3C/svg%3E");
+
 			box-shadow: var(--shd);
 		}
 
-		header .space {
-			flex-grow: 1;
+		header:last-child {
+			margin-right: 0;
 		}
 
-		header .button {
-			width: 40px;
-			margin-left: 10px;
-		}
-
-		header .avatar {
-			box-shadow: var(--shd-inset);
-		}
-
-		.feedback-btn {
-			width: 200px !important;
-			font-weight: bold;
-		}
-
-
-
-		article,
-		footer {
-			width: 100vw;
-			max-width: 1000px;
-			margin: 0 auto;
-		}
-
-		footer {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			margin-top: 80px;
-			margin-bottom: 20px;
-		}
-
-		footer p {
-			color: var(--secondary-text);
-		}
-
-		footer .img {
-			width: 200px;
-			height: 80px;
-			margin-top: 20px;
-			margin-bottom: 20px;
-		}
-
-		footer .bold * {
-			font-weight: bold;
-		}
-
-		nav {
-			position: fixed;
-			z-index: 9;
-			width: 300px;
-			height: calc(100vh - 110px);
-			padding-left: 10px;
-			padding-right: 10px;
-			color: var(--secondary-text);
-		}
-
-		.joined-rooms {
-			top: 100px;
-			left: 0;
-		}
-
-		.friends {
-			top: 100px;
-			left: calc(100vw - 300px);
-		}
-
-		@media only screen and (max-width: 1600px) {
-
-			article,
-			footer {
-				width: calc(100% - 600px);
-			}
-		}
-
-		/* navs */
-		.navs {
+		header .navs {
 			position: absolute;
+			z-index: 8;
 			top: 0;
 			left: calc(50% - 80px);
-			z-index: 11;
+
 			height: 100%;
+
 			display: flex;
 		}
 
-		.navs-item {
+		header .navs-items {
 			width: 80px;
 			height: 100%;
+
 			display: flex;
 			justify-content: center;
 			align-items: center;
+
 			transition: all .2s ease;
 		}
 
-		.navs-item:hover {
+		header .navs-items:hover {
 			background-color: var(--bg6);
 		}
 
-		.navs-item.active {
+		header .navs-items.active {
 			border-top: 3px solid var(--highlight);
 		}
 
-		/* joined-rooms-item */
-		.joined-rooms-item {
-			width: 100%;
+		/* sidebar */
+		nav {
+			position: fixed;
+			z-index: 3;
+			top: 0;
+
+			width: 300px;
+			height: 100%;
+
 			display: flex;
+			flex-direction: column;
+
+			padding: 90px 10px 10px 10px;
+		}
+
+		nav .body:first-child {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			overflow: auto;
+
+			padding-right: 30px;
+		}
+
+		/* article */
+		article {
+			position: relative;
+
+			display: flex;
+			justify-content: center;
+
+			width: 100%;
+			height: 100%;
+
+			padding: 60px 300px 0 300px;
+		}
+	</style>
+
+	<!-- fragments main styles -->
+	<style>
+		/* joined rooms */
+		nav.joined-rooms {
+			left: 0;
+		}
+
+		.joined-rooms-items {
+			display: flex;
+
+			width: 100%;
+
 			margin-bottom: 15px;
-			border-radius: 10px;
+
 			cursor: pointer;
-		}
-
-		.joined-rooms-item .img {
-			width: 64px;
-			height: 64px;
-			border-radius: 10px;
-		}
-
-		.joined-rooms-item * {
 			font-weight: bold;
 		}
 
-		.joined-rooms-item .info {
+		.joined-rooms-items .img {
+			width: 64px;
 			height: 64px;
-			padding-left: 10px;
+
+			border-radius: var(--rounded);
+			box-shadow: var(--shd-inset);
+
+			transition: all .4s ease;
+		}
+
+		.joined-rooms-items:hover .img {
+			width: 100px;
+		}
+
+		.joined-rooms-items .info {
 			flex-grow: 1;
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
 			justify-content: center;
-		}
 
-		.joined-rooms-item .info * {
 			overflow: hidden;
-			white-space: nowrap;
+
+			height: 64px;
+
+			padding-left: 10px;
 		}
 
-		/* active */
-		.joined-rooms-item.active .img {
-			border: var(--border-highlight);
-			box-shadow: var(--shd-highlight);
+		.joined-rooms-items .info * {
+			overflow: inherit;
+			white-space: inherit;
 		}
 
-		/* friends-item */
-		.friends-item {
-			width: 100%;
+		/* friends */
+		nav.friends {
+			left: calc(100vw - 300px);
+		}
+
+		/* friends-items */
+		.friends-items {
 			display: flex;
 			align-items: center;
+
+			width: 100%;
+
 			margin-bottom: 15px;
-			border-radius: 10px;
+
 			cursor: pointer;
-		}
-
-		.friends-item .img {
-			width: 36px;
-			height: 36px;
-			border-radius: 36px;
-		}
-
-		.friends-item * {
 			font-weight: bold;
 		}
 
-		.friends-item .name {
+		.friends-items .img {
+			width: 36px;
+			height: 36px;
+
+			border-radius: 36px;
+			box-shadow: var(--shd-inset);
+		}
+
+		.friends-items .name {
 			padding-left: 10px;
 			overflow: hidden;
 			white-space: nowrap;
 		}
-	</style>
 
-	<!-- game channel -->
-	<style>
-		.game-channels-list {
+		/* game channels */
+		.game-channels {
+			position: relative;
+
 			display: flex;
-			justify-content: center;
-			margin-bottom: 22px;
-		}
+			flex-direction: column;
+			align-items: center;
 
-		.game-channels-banner {
 			width: 100%;
-			height: 290px;
-			margin-bottom: 70px;
+			height: 100%;
+
+			padding: 40px;
+
+			background-color: rgba(0, 0, 0, .2);
 			box-shadow: var(--shd-inset);
 		}
 
-		/* special rooms */
-		.special-rooms {
-			margin-bottom: 70px;
-		}
+		.game-channels-head {
+			margin-bottom: 22px;
 
-		.special-rooms-item {
-			position: relative;
-			display: flex;
-			flex-direction: column;
-			width: 160px;
-			min-width: 160px;
-			height: 220px;
-			padding: 110px 10px 10px 10px;
-			margin-right: 22px;
-			margin-bottom: 30px;
-			box-shadow: var(--shd-sm);
-			overflow: hidden;
-			cursor: pointer;
-			transition: all .4s ease;
-		}
-
-		.special-rooms-item:hover {
-			background-position-x: left;
-			border: 2px solid var(--highlight);
-			box-shadow: unset;
-		}
-
-		.special-rooms-item * {
+			font-size: var(--text-size-lg);
+			color: var(--secondary-text);
 			font-weight: bold;
-			position: relative;
-			z-index: 1;
 		}
 
-		.special-rooms-item::after {
-			content: "";
-			width: 100%;
-			height: calc(100% - 100px);
-			background-color: rgba(0, 0, 0, .9);
-			position: absolute;
-			left: 0;
-			top: 100px;
+		.game-channels-head select {
+			font-weight: inherit;
 		}
 
-		.special-rooms-item .title {
+		.game-channels-body {
 			flex-grow: 1;
-			overflow: hidden;
+			display: flex;
+
+			overflow: auto;
+
+			width: 100%;
 		}
 
 		/* global chats */
-		.global-chats-and-news {
-			width: calc(50% - 50px);
-			min-width: 50%;
-			margin-right: 50px;
-		}
-
 		.global-chats {
-			height: 650px;
-			min-height: 650px;
+			width: 400px;
+			min-width: 400px;
+			height: 100%;
+
+			display: flex;
+			flex-direction: column;
+
+			margin-right: 40px;
 		}
 
-		.global-chats-item {
+		.global-chats-body {
+			flex-grow: 1;
+
+			overflow: auto;
+
+			max-height: 550px;
+
+			padding-right: 30px;
+		}
+
+		.global-chats-items {
 			width: 100%;
 			margin-bottom: 15px;
 			display: flex;
+			align-items: flex-start;
 		}
 
-		.global-chats-item .avatar {
+		.global-chats-items .avatar {
 			width: 24px;
 			min-width: 24px;
 			height: 24px;
+
 			border-radius: 24px;
-			margin-top: 2x;
-			margin-right: 10px;
+			margin-top: 3px;
+			margin-right: 8px;
 		}
 
-		.global-chats-item-body {
+		.global-chats-items-body {
 			flex-grow: 1;
 			overflow: hidden;
 		}
 
-		.global-chats-item-body .name {
+		.global-chats-items-body .name {
 			display: inline-block;
+
+			overflow: hidden;
+
 			max-width: 80%;
-			font-weight: bold;
+
 			padding-bottom: 5px;
 			padding-top: 11px;
+
+			font-weight: bold;
 			color: var(--secondary-text) !important;
 			white-space: nowrap;
 			font-size: var(--text-size-sm);
-			overflow: hidden;
 			line-height: 0;
 		}
 
-		.global-chats-item-body .name::after {
+		.global-chats-items-body .name::after {
 			content: ': ';
 		}
 
-		.global-chats-item-body .content {
+		.global-chats-items-body .content {
 			display: inline;
 		}
 
 		.messages-box {
 			display: flex;
-			align-items: baseline;
+			align-items: flex-end;
 			margin-top: 15px;
 		}
 
@@ -598,171 +890,125 @@
 			width: 24px;
 			min-width: 24px;
 			height: 24px;
-			border-radius: 24px;
+
 			margin-right: 10px;
+
+			border-radius: 24px;
 		}
 
-		.messages-box .content {
-			min-width: 0;
+		.messages-box input {
 			flex-grow: 1;
-			border-radius: 10px;
+
+			min-width: 0;
+
+			padding: 7px 10px;
+
+			border-radius: var(--rounded-sm);
 			background-color: var(--bg8);
-			padding: 5px 10px;
 			border: none;
 			resize: none;
 		}
 
-		.messages-container {
-			padding: 10px;
-			border-radius: 10px;
-			background-color: var(--bg8);
+		/* rooms */
+		.rooms {
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+
+			overflow: auto;
+
+			height: 100%;
+
+			height: 100%;
+		}
+
+		.rooms-body {
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+
+			width: 100%;
+
+			padding-right: 30px;
+
 			overflow: auto;
 		}
 
-		/* news */
-		.news {
-			width: 100%;
-			margin-top: 100px;
-		}
-
-		.news-item {
-			position: relative;
-			width: 100%;
-			height: 120px;
-			min-height: 120px;
-			margin-bottom: 15px;
-		}
-
-		.news-item .img {
-			width: 90px;
-			height: 100%;
-			position: absolute;
-			left: 0;
-			top: 0;
-			border-radius: 10px;
-			transition: all .5s ease;
-		}
-
-		.news-item .img:hover {
-			background-position-x: left;
-		}
-
-		.news-item .title {
-			display: block;
-			width: calc(100% - 100px);
-			max-height: 53%;
-			overflow: hidden;
-			margin-left: 100px;
-			font-weight: bold;
-		}
-
-		.news-item .content {
-			width: calc(100% - 100px);
-			max-height: 46.9%;
-			overflow: hidden;
-			margin-left: 100px;
-			color: var(--secondary-text) !important;
-			font-size: var(--text-size-sm);
-		}
-
-		/* rooms */
-		.rooms {
-			width: 50%;
-		}
-
-		.rooms-item {
-			width: 100%;
-			padding: 10px;
+		.rooms-items {
 			display: flex;
+			flex-direction: column;
+
+			width: 100%;
+
+			padding: 10px;
 			margin-bottom: 10px;
-			border-radius: 10px;
-			overflow: hidden;
+
+			border-left: 4px solid var(--secondary-text);
 			cursor: pointer;
-			background-color: var(--bg8);
-			transition: all .6s ease;
+			font-weight: bold;
+
+			transition: all .2s ease-out;
 		}
 
-		.rooms-item .img {
-			width: 64px;
-			min-width: 64px;
-			height: 64px;
-			border-radius: 10px;
-			margin-right: 10px;
-			box-shadow: var(--shd-inset);
-			transition: all .4s ease;
+		.rooms-items:hover {
+			border-left: 8px solid var(--highlight);
+			background-position: top;
 		}
 
-		.rooms-item:hover {
-			border-left: 6px solid var(--highlight);
-		}
-
-		.rooms-item:hover .img {
-			width: 100px;
-			min-width: 100px;
-		}
-
-		.rooms-item-info {
+		.rooms-items-info {
 			flex-grow: 1;
 			overflow: hidden;
-		}
-
-		.rooms-item-info * {
 			font-weight: bold;
-			white-space: nowrap;
 		}
 
-		.rooms-item-detail-info * {
+		.rooms-items-detail-info {
+			padding-top: 10px;
+		}
+
+		.rooms-items-detail-info * {
 			display: inline;
 		}
 	</style>
 
-
-
-	<header>
-		<div class="row m-0">
-			<svg width="40px" height="40px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg"
-				xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
-				style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-				<g transform="matrix(-6.60965e-17,1,1,6.61098e-17,5.9952e-15,-1.42109e-14)">
-					<path
-						d="M21.667,73.809L21.667,33.867L49.997,17.679L78.334,33.867L78.334,66.13L49.997,82.321L35,73.75L35,41.604L49.997,33.034L65,41.604L65,58.392L49.997,66.963L48.334,66.013L48.334,49.343L56.716,44.551L49.997,40.713L41.667,45.476L41.667,69.88L49.997,74.642L71.667,62.259L71.667,37.737L49.997,25.358L28.334,37.737L28.334,77.617L49.997,90L85,70L85,30L49.997,10L15,30L15,70L21.667,73.809Z"
-						style="fill-rule:nonzero;"></path>
-				</g>
-			</svg>
-		</div>
+	<header class="bg-svg">
+		<svg width="40px" height="40px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg"
+			xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
+			style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+			<g transform="matrix(-6.60965e-17,1,1,6.61098e-17,5.9952e-15,-1.42109e-14)">
+				<path
+					d="M21.667,73.809L21.667,33.867L49.997,17.679L78.334,33.867L78.334,66.13L49.997,82.321L35,73.75L35,41.604L49.997,33.034L65,41.604L65,58.392L49.997,66.963L48.334,66.013L48.334,49.343L56.716,44.551L49.997,40.713L41.667,45.476L41.667,69.88L49.997,74.642L71.667,62.259L71.667,37.737L49.997,25.358L28.334,37.737L28.334,77.617L49.997,90L85,70L85,30L49.997,10L15,30L15,70L21.667,73.809Z"
+					style="fill-rule:nonzero;"></path>
+			</g>
+		</svg>
 		<div class="navs">
-			<div class="navs-item active" data-toggle="tooltip" data-placement="bottom" title="Trò chơi">
+			<div class="navs-items active" data-toggle="tooltip" data-placement="bottom" title="Trò chơi">
 				<i class="fas fa-gamepad fa-2x"></i>
 			</div>
-			<div class="navs-item" data-toggle="tooltip" data-placement="bottom" title="Mạng xã hội">
+			<div class="navs-items" data-toggle="tooltip" data-placement="bottom" title="Mạng xã hội">
 				<i class="fas fa-globe fa-2x"></i>
 			</div>
 		</div>
-		<div class="row m-0">
-			<div class="button feedback-btn">Gửi phản hồi của bạn</div>
-			<div class="button">
-				<i class="fas fa-comment"></i>
-			</div>
-			<div class="button">
-				<i class="fas fa-bell"></i>
-			</div>
-			<div class="avatar button img" style="background-image: url(img/avatar.jpg)"></div>
+		<div class="row">
+			<div class="btn btn-light btn-content rounded-circle">Gửi phản hồi của bạn</div>
+			<i class="fas fa-comment btn btn-light rounded-circle"></i>
+			<i class="fas fa-bell btn btn-light rounded-circle"></i>
+			<div class="avatar btn btn-light img rounded-circle" style="background-image: url(img/avatar.jpg)"></div>
 		</div>
 	</header>
 
-
 	<!-- joined room -->
-	<nav class="component joined-rooms">
-		<div class="component-head underline">
+	<nav class="joined-rooms">
+		<div class="head">
 			<label>Phòng đã tham gia</label>
-			<div>
-				<i class="fas fa-search mr-1 icon"></i><i class="fas fa-ellipsis-h icon"></i>
+			<div class="row">
+				<i class="fas fa-search mr-1 btn btn-sm rounded-circle"></i>
+				<i class="fas fa-ellipsis-h btn btn-sm rounded-circle mr-0"></i>
 			</div>
 		</div>
 
-		<div class="component-body flex-grow-0">
+		<div class="body">
 
-			<div class="joined-rooms-item padding-hover active">
+			<div class="joined-rooms-items hover active">
 				<div class="img" style="background-image: url(img/14.jpg)"></div>
 				<div class="info">
 					<p>Battlefield 1</p>
@@ -770,7 +1016,7 @@
 				</div>
 			</div>
 
-			<div class="joined-rooms-item padding-hover">
+			<div class="joined-rooms-items hover">
 				<div class="img" style="background-image: url(img/10.jpg)"></div>
 				<div class="info">
 					<p>Minecraft</p>
@@ -778,7 +1024,7 @@
 				</div>
 			</div>
 
-			<div class="joined-rooms-item padding-hover">
+			<div class="joined-rooms-items hover">
 				<div class="img" style="background-image: url(img/9.jpg)"></div>
 				<div class="info">
 					<p>Left 4 Dead 2</p>
@@ -786,7 +1032,7 @@
 				</div>
 			</div>
 
-			<div class="joined-rooms-item padding-hover">
+			<div class="joined-rooms-items hover">
 				<div class="img" style="background-image: url(img/13.jpg)"></div>
 				<div class="info">
 					<p>War of Tanks</p>
@@ -794,7 +1040,7 @@
 				</div>
 			</div>
 
-			<div class="joined-rooms-item padding-hover">
+			<div class="joined-rooms-items hover">
 				<div class="img" style="background-image: url(img/12.jpg)"></div>
 				<div class="info">
 					<p>Start Craft</p>
@@ -802,7 +1048,7 @@
 				</div>
 			</div>
 
-			<div class="joined-rooms-item padding-hover">
+			<div class="joined-rooms-items hover">
 				<div class="img" style="background-image: url(img/16.jpg)"></div>
 				<div class="info">
 					<p>Battlefield 4</p>
@@ -810,7 +1056,7 @@
 				</div>
 			</div>
 
-			<div class="joined-rooms-item padding-hover">
+			<div class="joined-rooms-items hover">
 				<div class="img" style="background-image: url(img/11.jpg)"></div>
 				<div class="info">
 					<p>Titanfall 2</p>
@@ -821,403 +1067,46 @@
 
 		</div>
 
-		<div class="button button-light w-100 mt-3 rounded">Tìm phòng nhanh</div>
+		<div class="btn btn-content m-0 mt-3">Tìm phòng nhanh</div>
 	</nav>
 
-	<!-- game channel -->
-	<article>
-		<div class="game-channels-list">
-			<label class="dropdown-toggle" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				HearthStone
-			</label>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				<a class="dropdown-item" href="#">GTA 5</a>
-				<a class="dropdown-item" href="#">Minecraft</a>
-				<a class="dropdown-item" href="#">Left 4 Dead 2</a>
-				<a class="dropdown-item" href="#">War Frame</a>
-				<a class="dropdown-item" href="#">Titanfall 2</a>
-				<a class="dropdown-item" href="#">Start Craft</a>
-				<a class="dropdown-item" href="#">Battlefield 4</a>
-			</div>
-		</div>
-
-		<!-- banner -->
-		<div class="game-channels-banner img rounded" style="background-image: url(img/9.jpg)"></div>
-
-		<!-- special rooms -->
-		<div class="special-rooms component">
-			<div class="component-head">
-				<label>Phòng chat nổi bật</label>
-				<div>
-					<i class="fas fa-search mr-1 icon"></i><i class="fas fa-ellipsis-h icon"></i>
-				</div>
-			</div>
-
-			<div class="component-body flex-row p-0">
-
-				<div class="special-rooms-item highlight-hover img rounded" onclick="echo()"
-					style="background-image: url(img/9.jpg)">
-					<p class="title">Nào mình cùng lên xe buýt</p>
-					<p>#1</p>
-					<div class="rooms-item-detail-info">
-						<i class="fas fa-globe-americas pr-2"></i>
-						<div class="member-num">
-							2/3
-							<i class="fas fa-users"></i>
-						</div>
-					</div>
-				</div>
-
-				<div class="special-rooms-item highlight-hover img rounded" onclick="echo()"
-					style="background-image: url(img/9.jpg)">
-					<p class="title">Nào mình cùng lên xe buýt</p>
-					<p>#1</p>
-					<div class="rooms-item-detail-info">
-						<i class="fas fa-globe-americas pr-2"></i>
-						<div class="member-num">
-							2/3
-							<i class="fas fa-users"></i>
-						</div>
-					</div>
-				</div>
-
-				<div class="special-rooms-item highlight-hover img rounded" onclick="echo()"
-					style="background-image: url(img/9.jpg)">
-					<p class="title">Nào mình cùng lên xe buýt</p>
-					<p>#1</p>
-					<div class="rooms-item-detail-info">
-						<i class="fas fa-globe-americas pr-2"></i>
-						<div class="member-num">
-							2/3
-							<i class="fas fa-users"></i>
-						</div>
-					</div>
-				</div>
-
-				<div class="special-rooms-item highlight-hover img rounded" onclick="echo()"
-					style="background-image: url(img/9.jpg)">
-					<p class="title">Nào mình cùng lên xe buýt</p>
-					<p>#1</p>
-					<div class="rooms-item-detail-info">
-						<i class="fas fa-globe-americas pr-2"></i>
-						<div class="member-num">
-							2/3
-							<i class="fas fa-users"></i>
-						</div>
-					</div>
-				</div>
-
-				<div class="special-rooms-item highlight-hover img rounded" onclick="echo()"
-					style="background-image: url(img/9.jpg)">
-					<p class="title">Nào mình cùng lên xe buýt</p>
-					<p>#1</p>
-					<div class="rooms-item-detail-info">
-						<i class="fas fa-globe-americas pr-2"></i>
-						<div class="member-num">
-							2/3
-							<i class="fas fa-users"></i>
-						</div>
-					</div>
-				</div>
-
-				<div class="special-rooms-item highlight-hover img rounded" onclick="echo()"
-					style="background-image: url(img/9.jpg)">
-					<p class="title">Nào mình cùng lên xe buýt</p>
-					<p>#1</p>
-					<div class="rooms-item-detail-info">
-						<i class="fas fa-globe-americas pr-2"></i>
-						<div class="member-num">
-							2/3
-							<i class="fas fa-users"></i>
-						</div>
-					</div>
-				</div>
-
-				<div class="special-rooms-item highlight-hover img rounded" onclick="echo()"
-					style="background-image: url(img/9.jpg)">
-					<p class="title">Nào mình cùng lên xe buýt</p>
-					<p>#1</p>
-					<div class="rooms-item-detail-info">
-						<i class="fas fa-globe-americas pr-2"></i>
-						<div class="member-num">
-							2/3
-							<i class="fas fa-users"></i>
-						</div>
-					</div>
-				</div>
-
-				<div class="special-rooms-item highlight-hover img rounded" onclick="echo()"
-					style="background-image: url(img/9.jpg)">
-					<p class="title">Nào mình cùng lên xe buýt</p>
-					<p>#1</p>
-					<div class="rooms-item-detail-info">
-						<i class="fas fa-globe-americas pr-2"></i>
-						<div class="member-num">
-							2/3
-							<i class="fas fa-users"></i>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="d-flex">
-
-			<div class="global-chats-and-news">
-
-				<!-- global chats -->
-				<div class="global-chats component">
-					<div class="component-head">
-						<label>Kênh chat chung</label>
-						<div>
-							<i class="fas fa-search mr-1 icon"></i><i class="fas fa-ellipsis-h icon"></i>
-						</div>
-					</div>
-					<div class="messages-container component-body">
-
-						<!-- <div class="global-chats-item"></div> -->
-
-					</div>
-					<div class="messages-box">
-						<div class="avatar img" style="background-image: url(img/avatar.jpg)"></div>
-						<input contenteditable class="messages-box-content content" placeholder="Viết gì đó..."
-							onkeyup="updateMessagesBoxLength()" onkeydown="send(event)">
-						<p class="messages-box-length ml-2">0/100</p>
-						<i class="far fa-smile pl-2"></i>
-					</div>
-				</div>
-
-				<!-- news -->
-				<div class="news component">
-					<div class="component-head">
-						<label>Bản tin game</label>
-						<div>
-							<i class="fas fa-search mr-1 icon"></i><i class="fas fa-ellipsis-h icon"></i>
-						</div>
-					</div>
-					<div class="news-container component-body flex-grow-0 p-0">
-
-						<!-- <div class="news-item"></div> -->
-
-					</div>
-
-					<div class="button button-light w-100 mt-3 rounded">Xem thêm</div>
-				</div>
-			</div>
-
-			<!-- rooms -->
-			<div class="rooms component">
-				<div class="component-head">
-					<label>Danh sách phòng chat</label>
-					<div>
-						<i class="fas fa-search mr-1 icon"></i><i class="fas fa-ellipsis-h icon"></i>
-					</div>
-				</div>
-				<div class="rooms-body component-body flex-grow-0 p-0">
-
-					<div class="rooms-item highlight-hover" onclick="echo()">
-						<div class="img" style="background-image: url(img/9.jpg)"></div>
-						<div class="rooms-item-info">
-							<p>Nào mình cùng lên xe buýt</p>
-							<p>#1</p>
-							<div class="rooms-item-detail-info">
-								<i class="fas fa-globe-americas pr-2"></i>
-								<div class="member-num">
-									2/3
-									<i class="fas fa-users"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="rooms-item highlight-hover" onclick="echo()">
-						<div class="img" style="background-image: url(img/9.jpg)"></div>
-						<div class="rooms-item-info">
-							<p>Nào mình cùng lên xe buýt</p>
-							<p>#1</p>
-							<div class="rooms-item-detail-info">
-								<i class="fas fa-globe-americas pr-2"></i>
-								<div class="member-num">
-									2/3
-									<i class="fas fa-users"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="rooms-item highlight-hover" onclick="echo()">
-						<div class="img" style="background-image: url(img/9.jpg)"></div>
-						<div class="rooms-item-info">
-							<p>Nào mình cùng lên xe buýt</p>
-							<p>#1</p>
-							<div class="rooms-item-detail-info">
-								<i class="fas fa-globe-americas pr-2"></i>
-								<div class="member-num">
-									2/3
-									<i class="fas fa-users"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-
-
-					<div class="rooms-item highlight-hover" onclick="echo()">
-						<div class="img" style="background-image: url(img/9.jpg)"></div>
-						<div class="rooms-item-info">
-							<p>Nào mình cùng lên xe buýt</p>
-							<p>#1</p>
-							<div class="rooms-item-detail-info">
-								<i class="fas fa-globe-americas pr-2"></i>
-								<div class="member-num">
-									2/3
-									<i class="fas fa-users"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="rooms-item highlight-hover" onclick="echo()">
-						<div class="img" style="background-image: url(img/9.jpg)"></div>
-						<div class="rooms-item-info">
-							<p>Nào mình cùng lên xe buýt</p>
-							<p>#1</p>
-							<div class="rooms-item-detail-info">
-								<i class="fas fa-globe-americas pr-2"></i>
-								<div class="member-num">
-									2/3
-									<i class="fas fa-users"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="rooms-item highlight-hover" onclick="echo()">
-						<div class="img" style="background-image: url(img/9.jpg)"></div>
-						<div class="rooms-item-info">
-							<p>Nào mình cùng lên xe buýt</p>
-							<p>#1</p>
-							<div class="rooms-item-detail-info">
-								<i class="fas fa-globe-americas pr-2"></i>
-								<div class="member-num">
-									2/3
-									<i class="fas fa-users"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="rooms-item highlight-hover" onclick="echo()">
-						<div class="img" style="background-image: url(img/9.jpg)"></div>
-						<div class="rooms-item-info">
-							<p>Nào mình cùng lên xe buýt</p>
-							<p>#1</p>
-							<div class="rooms-item-detail-info">
-								<i class="fas fa-globe-americas pr-2"></i>
-								<div class="member-num">
-									2/3
-									<i class="fas fa-users"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="rooms-item highlight-hover" onclick="echo()">
-						<div class="img" style="background-image: url(img/9.jpg)"></div>
-						<div class="rooms-item-info">
-							<p>Nào mình cùng lên xe buýt</p>
-							<p>#1</p>
-							<div class="rooms-item-detail-info">
-								<i class="fas fa-globe-americas pr-2"></i>
-								<div class="member-num">
-									2/3
-									<i class="fas fa-users"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="rooms-item highlight-hover" onclick="echo()">
-						<div class="img" style="background-image: url(img/9.jpg)"></div>
-						<div class="rooms-item-info">
-							<p>Nào mình cùng lên xe buýt</p>
-							<p>#1</p>
-							<div class="rooms-item-detail-info">
-								<i class="fas fa-globe-americas pr-2"></i>
-								<div class="member-num">
-									2/3
-									<i class="fas fa-users"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="rooms-item highlight-hover" onclick="echo()">
-						<div class="img" style="background-image: url(img/9.jpg)"></div>
-						<div class="rooms-item-info">
-							<p>Nào mình cùng lên xe buýt</p>
-							<p>#1</p>
-							<div class="rooms-item-detail-info">
-								<i class="fas fa-globe-americas pr-2"></i>
-								<div class="member-num">
-									2/3
-									<i class="fas fa-users"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-
-
-				</div>
-
-				<div class="row m-0 mt-3">
-					<div class="button button-light col rounded">Xem thêm</div>
-					<div class="button ml-2 px-3 rounded">Tạo phòng</div>
-				</div>
-			</div>
-
-		</div>
-
-
-
-	</article>
-
 	<!-- friends -->
-	<nav class="component friends">
-		<div class="component-head underline">
+	<nav class="friends">
+		<div class="head">
 			<label>Bạn bè</label>
-			<div>
-				<i class="fas fa-search mr-1 icon"></i><i class="fas fa-ellipsis-h icon"></i>
+			<div class="row">
+				<i class="fas fa-search mr-1 btn btn-sm rounded-circle"></i>
+				<i class="fas fa-ellipsis-h btn btn-sm rounded-circle mr-0"></i>
 			</div>
 		</div>
-		<div class="component-body flex-grow-0">
+		<div class="body">
 
-			<div class="friends-item padding-hover">
+			<div class="friends-items hover">
 				<div class="img" style="background-image: url(img/100.jpg)"></div>
 				<p class="name">Phong Nguyen</p>
 			</div>
 
-			<div class="friends-item padding-hover">
+			<div class="friends-items hover">
 				<div class="img" style="background-image: url(img/101.jpg)"></div>
 				<p class="name">Lĩnh Nguyễn</p>
 			</div>
 
-			<div class="friends-item padding-hover">
+			<div class="friends-items hover">
 				<div class="img" style="background-image: url(img/102.jpg)"></div>
 				<p class="name">Chương Đỗ</p>
 			</div>
 
-			<div class="friends-item padding-hover">
+			<div class="friends-items hover">
 				<div class="img" style="background-image: url(img/103.jpg)"></div>
 				<p class="name">Sanh Trần</p>
 			</div>
 
-			<div class="friends-item padding-hover">
+			<div class="friends-items hover">
 				<div class="img" style="background-image: url(img/104.jpg)"></div>
 				<p class="name">Nhân Nguyễn</p>
 			</div>
 
-			<div class="friends-item padding-hover">
+			<div class="friends-items hover">
 				<div class="img" style="background-image: url(img/105.jpg)"></div>
 				<p class="name">Huy Mai</p>
 			</div>
@@ -1225,30 +1114,202 @@
 
 		</div>
 
-		<div class="button button-light w-100 mt-3 rounded">Kết bạn</div>
+		<div class="btn btn-content m-0 mt-3">Kết bạn</div>
 	</nav>
 
+	<article>
+		<div class="game-channels">
+			<div class="background img" style="background-image: url(img/9.jpg)"></div>
 
-	<footer>
-		<hr class="mb-4">
-		<div class="languages-list">
-			<i class="fas fa-globe-asia"></i>
-			<label class="dropdown-toggle" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				Tiếng Việt
-			</label>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				<a class="dropdown-item" href="#">Tiếng Việt</a>
-				<a class="dropdown-item" href="#">English</a>
+			<div class="game-channels-head">
+				<label for="game-channels-list">Kênh game hiện tại:</label>
+
+				<select id="game-channels-list">
+					<option value="saab">HearthStone</option>
+					<option value="volvo">GTA 5</option>
+					<option value="saab">Minecraft</option>
+					<option value="mercedes">Left 4 Dead 2</option>
+					<option value="audi">Titanfall 2</option>
+				</select>
+			</div>
+
+			<div class="game-channels-body">
+				<!-- global chats -->
+				<div class="global-chats">
+					<div class="head">
+						<label>Kênh chat chung</label>
+						<div class="row">
+							<i class="fas fa-search mr-1 btn btn-sm rounded-circle"></i>
+							<i class="fas fa-ellipsis-h btn btn-sm rounded-circle mr-0"></i>
+						</div>
+					</div>
+					<div class="global-chats-body">
+
+						<!-- <div class="global-chats-items"></div> -->
+
+					</div>
+					<div class="messages-box">
+						<div class="avatar img" style="background-image: url(img/avatar.jpg)"></div>
+						<input contenteditable class="messages-box-content" placeholder="Viết gì đó..."
+							onkeyup="updateMessagesBoxLength()" onkeydown="send(event)">
+						<p class="messages-box-length ml-2">0/100</p>
+						<i class="far fa-smile pl-2"></i>
+					</div>
+				</div>
+
+				<!-- rooms -->
+				<div class="rooms">
+					<div class="head">
+						<label>Danh sách phòng chat</label>
+						<div>
+							<i class="fas fa-search mr-1 icon"></i><i class="fas fa-ellipsis-h icon"></i>
+						</div>
+					</div>
+					<div class="rooms-body">
+
+						<div class="rooms-items layer-black img" onclick="echo()"
+							style="background-image: url(img/1.jpg)">
+							<p class="nowrap">Nào mình cùng lên xe buýt</p>
+							<p class="nowrap">#1</p>
+							<div class="rooms-items-detail-info">
+								<i class="fas fa-globe-americas pr-2"></i>
+								<div class="member-num">
+									2/3
+									<i class="fas fa-users"></i>
+								</div>
+							</div>
+						</div>
+
+						<div class="rooms-items layer-black img" onclick="echo()"
+							style="background-image: url(img/2.jpg)">
+							<p class="nowrap">Nào mình cùng lên xe buýt</p>
+							<p class="nowrap">#1</p>
+							<div class="rooms-items-detail-info">
+								<i class="fas fa-globe-americas pr-2"></i>
+								<div class="member-num">
+									2/3
+									<i class="fas fa-users"></i>
+								</div>
+							</div>
+						</div>
+
+						<div class="rooms-items layer-black img" onclick="echo()"
+							style="background-image: url(img/5.jpg)">
+							<p class="nowrap">Nào mình cùng lên xe buýt</p>
+							<p class="nowrap">#1</p>
+							<div class="rooms-items-detail-info">
+								<i class="fas fa-globe-americas pr-2"></i>
+								<div class="member-num">
+									2/3
+									<i class="fas fa-users"></i>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="rooms-items layer-black img" onclick="echo()"
+							style="background-image: url(img/9.jpg)">
+							<p class="nowrap">Nào mình cùng lên xe buýt</p>
+							<p class="nowrap">#1</p>
+							<div class="rooms-items-detail-info">
+								<i class="fas fa-globe-americas pr-2"></i>
+								<div class="member-num">
+									2/3
+									<i class="fas fa-users"></i>
+								</div>
+							</div>
+						</div>
+
+						<div class="rooms-items layer-black img" onclick="echo()"
+							style="background-image: url(img/9.jpg)">
+							<p class="nowrap">Nào mình cùng lên xe buýt</p>
+							<p class="nowrap">#1</p>
+							<div class="rooms-items-detail-info">
+								<i class="fas fa-globe-americas pr-2"></i>
+								<div class="member-num">
+									2/3
+									<i class="fas fa-users"></i>
+								</div>
+							</div>
+						</div>
+
+						<div class="rooms-items layer-black img" onclick="echo()"
+							style="background-image: url(img/9.jpg)">
+							<p class="nowrap">Nào mình cùng lên xe buýt</p>
+							<p class="nowrap">#1</p>
+							<div class="rooms-items-detail-info">
+								<i class="fas fa-globe-americas pr-2"></i>
+								<div class="member-num">
+									2/3
+									<i class="fas fa-users"></i>
+								</div>
+							</div>
+						</div>
+
+						<div class="rooms-items layer-black img" onclick="echo()"
+							style="background-image: url(img/9.jpg)">
+							<p class="nowrap">Nào mình cùng lên xe buýt</p>
+							<p class="nowrap">#1</p>
+							<div class="rooms-items-detail-info">
+								<i class="fas fa-globe-americas pr-2"></i>
+								<div class="member-num">
+									2/3
+									<i class="fas fa-users"></i>
+								</div>
+							</div>
+						</div>
+
+						<div class="rooms-items layer-black img" onclick="echo()"
+							style="background-image: url(img/9.jpg)">
+							<p class="nowrap">Nào mình cùng lên xe buýt</p>
+							<p class="nowrap">#1</p>
+							<div class="rooms-items-detail-info">
+								<i class="fas fa-globe-americas pr-2"></i>
+								<div class="member-num">
+									2/3
+									<i class="fas fa-users"></i>
+								</div>
+							</div>
+						</div>
+
+						<div class="rooms-items layer-black img" onclick="echo()"
+							style="background-image: url(img/9.jpg)">
+							<p class="nowrap">Nào mình cùng lên xe buýt</p>
+							<p class="nowrap">#1</p>
+							<div class="rooms-items-detail-info">
+								<i class="fas fa-globe-americas pr-2"></i>
+								<div class="member-num">
+									2/3
+									<i class="fas fa-users"></i>
+								</div>
+							</div>
+						</div>
+
+						<div class="rooms-items layer-black img" onclick="echo()"
+							style="background-image: url(img/9.jpg)">
+							<p class="nowrap">Nào mình cùng lên xe buýt</p>
+							<p class="nowrap">#1</p>
+							<div class="rooms-items-detail-info">
+								<i class="fas fa-globe-americas pr-2"></i>
+								<div class="member-num">
+									2/3
+									<i class="fas fa-users"></i>
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+
+					<div class="btn btn-content m-0 mt-3">Tạo phòng</div>
+				</div>
 			</div>
 		</div>
-		<div class="img" style="background-image: url(img/full-logo.png)"></div>
-		<p class="bold"><a href="#" target="_blank">ABOUT</a> | <a href="#" target="_blank">SUPPORT</a> | <a href="#"
-				target="_blank">CONTACT US</a></p>
-		<p>©2020 GAMING COMMUNITY, INC. ALL RIGHTS RESERVED.</p>
-		<p>All trademarks referenced herein are the properties of their respective owners.</p>
-		<p><a href="#" target="_blank">PRIVACY</a> | <a href="#" target="_blank">LEGAL</a> | <a href="#"
-				target="_blank">TERMS</a> | <a href="#" target="_blank">COOKIES</a></p>
-	</footer>
+	</article>
+
+
+
+
 
 
 	<script>
@@ -1300,9 +1361,9 @@
 				'Các em tranh thủ thời gian này để làm đồ án nhé. Tuần sau phải báo cáo kết quả cho Cô nhé. Cô sẽ thông báo lịch báo cáo sau. ',
 				'Cô ơi! bữa giờ em không đăng ký onl được. Lên trường liên hệ thì anh Đăng nói em không có trong database trường nên không đăng nhập vào trang đăng ký đồ án tổng hợp được ạ! An Đăng nói giờ em chỉ cần đăng ký bằng tờ giấy có chữ ký cô là được. Như vậy có sao không cô? 🥺',
 				`Chào cô và các bạn,
-Mình có tạo group Facebook hỗ trợ các bạn cùng nhau học Flutter
-Link: https://www.facebook.com/groups/534197517211915
-Mình có viết tài liệu Flutter (Lý thuyết và Thực hành) từ cơ bản đến nâng cao. Bạn nào có nhu cầu học có thể Join nhóm và trao đổi nhé!`,
+	Mình có tạo group Facebook hỗ trợ các bạn cùng nhau học Flutter
+	Link: https://www.facebook.com/groups/534197517211915
+	Mình có viết tài liệu Flutter (Lý thuyết và Thực hành) từ cơ bản đến nâng cao. Bạn nào có nhu cầu học có thể Join nhóm và trao đổi nhé!`,
 				'Nghỉ tiếp rồi cô ơi, mình có meeting online không cô',
 				'Biểu mẫu theo trên Khoa, mà cũng khác gì Biểu mẫu chuyên ngành là mấy',
 				'Gửi báo cáo theo link trên nhé các em',
@@ -1332,21 +1393,21 @@ Mình có viết tài liệu Flutter (Lý thuyết và Thực hành) từ cơ b�
 					'You can use <b>bold text</b>, ' +
 					'<a href="#">links</a> ' +
 					'and other HTML tags',
-				showCloseButton: true,
-				showCancelButton: true,
+				showClosebtn: true,
+				showCancelbtn: true,
 				focusCancel: true,
-				confirmButtonText:
+				confirmbtnText:
 					'<i class="fa fa-thumbs-up"></i> Great!',
-				confirmButtonAriaLabel: 'Thumbs up, great!',
-				cancelButtonText:
+				confirmbtnAriaLabel: 'Thumbs up, great!',
+				cancelbtnText:
 					'<i class="fa fa-thumbs-down"></i>',
-				cancelButtonAriaLabel: 'Thumbs down',
+				cancelbtnAriaLabel: 'Thumbs down',
 				background: '#455A64',
 			})
 		}
 
 		function appendMessages(content) {
-			const TARGET = $('.messages-container');
+			const TARGET = $('.global-chats-body');
 
 			TARGET.append(content);
 			TARGET.animate({ scrollTop: TARGET[0].scrollHeight }, 0);
@@ -1361,19 +1422,19 @@ Mình có viết tài liệu Flutter (Lý thuyết và Thực hành) từ cơ b�
 			if (event.keyCode === 13 && !event.shiftKey && !event.ctrlKey) {
 				// Cancel the default action, if needed
 				event.preventDefault();
-				// Trigger the button element with a click
+				// Trigger the btn element with a click
 				const MESSAGE_BOX = event.target;
 				const CONTENT = MESSAGE_BOX.value;
 				if (CONTENT && CONTENT.length < 101) {
 					MESSAGE_BOX.value = '';
 					const HTML = `
-						<div class="global-chats-item">
-							<div class="avatar img" style="background-image: url(img/avatar.jpg)"></div>
-							<div class="global-chats-item-body">
-								<a class="name">Giang Văn</a>
-								<pre class="content">${CONTENT}</pre>
-							</div>
-						</div>`;
+							<div class="global-chats-items">
+								<div class="avatar img" style="background-image: url(img/avatar.jpg)"></div>
+								<div class="global-chats-items-body">
+									<a class="name">Giang Văn</a>
+									<pre class="content wrap">${CONTENT}</pre>
+								</div>
+							</div>`;
 
 					appendMessages(HTML);
 				}
@@ -1384,11 +1445,11 @@ Mình có viết tài liệu Flutter (Lý thuyết và Thực hành) từ cơ b�
 
 		function appendNews(title, link, img, content) {
 			const HTML = `
-				<div class="news-item">
-					<a class="img" href="${link}" target="_blank" style="background-image: url(${img})"></a>
-					<a class="title wrap" href="${link}" target="_blank">${title}</a>
-					<pre class="content">${content}</pre>
-				</div>`;
+					<div class="news-items">
+						<a class="img" href="${link}" target="_blank" style="background-image: url(${img})"></a>
+						<a class="title wrap" href="${link}" target="_blank">${title}</a>
+						<pre class="content">${content}</pre>
+					</div>`;
 
 			$('.news-container').append(HTML);
 		}
@@ -1396,13 +1457,13 @@ Mình có viết tài liệu Flutter (Lý thuyết và Thực hành) từ cơ b�
 		function generateMessages() {
 			setTimeout(() => {
 				const HTML = `
-					<div class="global-chats-item">
-						<div class="avatar img" style="background-image: url(img/${getRandomAvatarNum()}.jpg)"></div>
-						<div class="global-chats-item-body">
-							<a class="name">${getRandomUsername()}</a>
-							<pre class="content">${getRandomContent()}</pre>
-						</div>
-					</div>`;
+						<div class="global-chats-items">
+							<div class="avatar img" style="background-image: url(img/${getRandomAvatarNum()}.jpg)"></div>
+							<div class="global-chats-items-body">
+								<a class="name">${getRandomUsername()}</a>
+								<pre class="content wrap">${getRandomContent()}</pre>
+							</div>
+						</div>`;
 				appendMessages(HTML);
 
 				generateMessages();
@@ -1410,11 +1471,7 @@ Mình có viết tài liệu Flutter (Lý thuyết và Thực hành) từ cơ b�
 		}
 
 		$(document).ready(() => {
-			renderNews();
-
-			$(function () {
-				$('[data-toggle="tooltip"]').tooltip()
-			})
+			// renderNews();
 
 			generateMessages();
 		});
@@ -1443,7 +1500,6 @@ Mình có viết tài liệu Flutter (Lý thuyết và Thực hành) từ cơ b�
 			});
 		}
 	</script>
-
 </body>
 
 </html>
