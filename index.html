@@ -22,15 +22,15 @@
 	<style>
 		:root {
 			/* background color */
-			--bg9: #263238;
-			--bg8: #37474F;
-			--bg7: #455A64;
-			--bg6: #546E7A;
-			--bg5: #607D8B;
-			--bg4: #78909C;
-			--bg3: #90A4AE;
-			--bg2: #B0BEC5;
-			--bg1: #CFD8DC;
+			--bg9: rgba(255, 255, 255, .05);
+			--bg8: rgba(255, 255, 255, .1);
+			--bg7: rgba(255, 255, 255, .15);
+			--bg6: rgba(255, 255, 255, .2);
+			--bg5: rgba(255, 255, 255, .25);
+			--bg4: rgba(255, 255, 255, .3);
+			--bg3: rgba(255, 255, 255, .35);
+			--bg2: rgba(255, 255, 255, .4);
+			--bg1: rgba(255, 255, 255, .45);
 			/* text color */
 			--primary-text: #e4e6eb;
 			--secondary-text: #B2B4B9;
@@ -568,12 +568,6 @@
 			white-space: nowrap;
 		}
 
-		/* svg background */
-		.bg-svg {
-			background-color: var(--bg9);
-			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='99' height='99' viewBox='0 0 120 120'%3E%3Cpolygon fill='%2337474f' fill-opacity='0.14' points='120 120 60 120 90 90 120 60 120 0 120 0 60 60 0 0 0 60 30 90 60 120 120 120 '/%3E%3C/svg%3E");
-		}
-
 		/* black layer */
 		.black-layer {
 			position: relative;
@@ -629,9 +623,6 @@
 			min-width: 800px;
 			height: 100vh;
 			min-height: 400px;
-
-			background-color: var(--bg9);
-			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='99' height='99' viewBox='0 0 120 120'%3E%3Cpolygon fill='%2337474f' fill-opacity='0.14' points='120 120 60 120 90 90 120 60 120 0 120 0 60 60 0 0 0 60 30 90 60 120 120 120 '/%3E%3C/svg%3E");
 		}
 
 		/* header */
@@ -652,7 +643,8 @@
 			padding-left: 10px;
 			padding-right: 10px;
 
-			box-shadow: var(--shd);
+			background-color: var(--bg8);
+			border-bottom: 1px solid var(--bg7)
 		}
 
 		header:last-child {
@@ -875,7 +867,7 @@
 
 
 
-	<header class="bg-svg">
+	<header>
 		<svg width="40px" height="40px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg"
 			xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
 			style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
@@ -1049,8 +1041,6 @@
 			height: 100%;
 
 			padding: 40px;
-
-			box-shadow: var(--shd-inset);
 		}
 
 		.game-channels-head {
@@ -1264,8 +1254,9 @@
 	</style>
 
 	<article>
+		<div class="background img" style="background-image: url(img/9.jpg)"></div>
+
 		<div class="game-channels">
-			<div class="background img" style="background-image: url(img/9.jpg)"></div>
 
 			<div class="game-channels-head">
 				<label for="game-channels-list">Kênh game hiện tại:</label>
