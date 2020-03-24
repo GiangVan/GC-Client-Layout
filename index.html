@@ -1054,7 +1054,7 @@
 		}
 
 		.game-channels-head {
-			margin-bottom: 22px;
+			margin-bottom: 50px;
 
 			font-size: var(--text-size-lg);
 			color: var(--secondary-text);
@@ -1068,7 +1068,7 @@
 		.game-channels-body {
 			flex-grow: 1;
 			display: flex;
-			justify-content: center;
+			justify-content: space-between;
 
 			overflow: auto;
 
@@ -1197,7 +1197,7 @@
 
 			overflow: auto;
 
-			max-width: 800px;
+			max-width: 600px;
 			height: 100%;
 
 			margin-right: 40px;
@@ -1225,14 +1225,11 @@
 			padding: 10px;
 			margin-bottom: 20px;
 
-			border-left: 4px solid var(--secondary-text);
+			border: 1px solid rgba(255, 255, 255, .35);
+			border-left: 3px solid var(--secondary-text);
 			cursor: pointer;
 
 			transition: all .2s ease-out;
-		}
-
-		.rooms-items:hover {
-			border-left: 8px solid var(--highlight);
 		}
 
 		.rooms-items:hover:after {
